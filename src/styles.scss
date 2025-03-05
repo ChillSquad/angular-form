@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+$debug: false;
+
+@if ($debug) {
+  * {
+    border: 1px solid #ff0000;
+  }
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

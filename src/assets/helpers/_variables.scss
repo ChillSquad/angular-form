@@ -1,0 +1,13 @@
+@import './breakpoints';
+
+:root {
+  --card-gap: 20px;
+
+  --card-border-radius: 20px;
+
+  @media (max-width: 576px) {
+    --card-gap: 10px;
+
+    --card-border-radius: 10px;
+  }
+}
