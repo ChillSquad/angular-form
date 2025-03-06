@@ -21,5 +21,5 @@ import {CommonModule} from '@angular/common';
   standalone: true,
 })
 export class AppComponent {
-  title = 'angular-template';
+  title = 'angular-form';
 }
