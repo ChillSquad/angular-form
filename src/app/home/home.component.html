@@ -3,5 +3,50 @@
 <section class="home-page">
   <p class="home-page__title">Главная страница</p>
 
-  <button class="home-page__button" mat-flat-button (click)="goToProductPage()">Ссылка на страница продукта</button>
+  <div class="form-container">
+    <h2>Форма</h2>
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Имя:</label>
+        <input 
+          id="name" 
+          type="text" 
+          formControlName="name"
+          [class.error]="isFieldInvalid('name')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('name')">
+          Пожалуйста, введите имя
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input 
+          id="email" 
+          type="email" 
+          formControlName="email"
+          [class.error]="isFieldInvalid('email')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          Пожалуйста, введите корректный email
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Телефон:</label>
+        <input 
+          id="phone" 
+          type="tel" 
+          formControlName="phone"
+          [class.error]="isFieldInvalid('phone')"
+        >
+        <div class="error-message" *ngIf="isFieldInvalid('phone')">
+          Пожалуйста, введите номер телефона
+        </div>
+      </div>
+  
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
 </section>

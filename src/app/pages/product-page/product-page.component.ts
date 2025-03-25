@@ -10,9 +10,22 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-page.component.scss',
 })
 export class ProductPageComponent {
-    constructor(private router: Router) {}
-  
-    goToHomePage() {
+  formData: any = {};
+
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras.state) {
+      this.formData = (navigation.extras.state as any)['data'];
+    }
+  }
+
+  ngOnInit() {
+    if (!this.formData.name) {
       this.router.navigate(['/']);
     }
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
+  }
 }

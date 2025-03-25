@@ -1,5 +1,9 @@
-<p>Страница продукта</p>
-
-<button class="product-page__button" mat-flat-button (click)="goToHomePage()">
-  Ссылка на главную страницу
-</button>
+<div class="confirmation-container">
+  <h2>Подтверждение</h2>
+  <div class="confirmation-data">
+    <p><strong>Имя:</strong> {{formData.name}}</p>
+    <p><strong>Email:</strong> {{formData.email}}</p>
+    <p><strong>Телефон:</strong> {{formData.phone}}</p>
+  </div>
+  <button (click)="goBack()">Вернуться к форме</button>
+</div>
